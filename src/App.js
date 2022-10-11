@@ -5,19 +5,19 @@ import randomQuestsion from "./questions.js";
 function App() {
   const cls = ["question"];
 
-  const [status, setStatus] = useState(randomQuestsion);
+  const [status, setStatus] = useState(randomQuestsion.setStatus);
 
   const сlickYes = () => {
-    setStatus((status.status = true));
+    setStatus(true);
   };
 
   const сlickNo = () => {
-    setStatus((status.status = false));
+    setStatus(false);
   };
 
-  if (randomQuestsion.status === true) {
+  if (status === true) {
     cls.push("green");
-  } else if (randomQuestsion.status === false) {
+  } else if (status === false) {
     cls.push("red");
   }
 
