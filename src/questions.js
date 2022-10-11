@@ -1,34 +1,34 @@
 const questions = [
   {
     question: "Объясните делегирование событий.",
-    status: false,
+    status: 0,
   },
   {
     question:
       "Объясните, как this работает в JavaScript? Можете ли вы привести пример одного из способов работы с this, которая изменилась изменилась в ES6?",
-    status: false,
+    status: 0,
   },
   {
     question: "Объясните, как работает прототипное наследование.",
-    status: false,
+    status: 0,
   },
   {
     question:
       "В чем разница между переменной null, undefined или undeclared? Как бы вы проверили любое из этих состояний?",
-    status: false,
+    status: 0,
   },
   {
     question: "Что такое замыкание и как/почему вы его используете?",
-    status: false,
+    status: 0,
   },
 ];
 
-function randomQuestion(arr) {
+function randomQuestions(arr) {
   let random = Math.floor(Math.random() * arr.length);
 
   return arr[random];
 }
 
-let randomQuest = randomQuestion(questions);
+let randomQuestsion = randomQuestions(questions);
 
-export default randomQuest;
+export default randomQuestsion;

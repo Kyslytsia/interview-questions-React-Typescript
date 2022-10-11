@@ -1,27 +1,35 @@
 import { useState } from "react";
 import "./App.css";
-import randomQuest from "./questions.js";
+import randomQuestsion from "./questions.js";
 
 function App() {
-  const [status, setStatus] = useState(randomQuest.status);
+  const cls = ["question"];
+
+  const [status, setStatus] = useState(randomQuestsion);
 
   const сlickYes = () => {
-    randomQuest.status = setStatus(true);
+    setStatus((status.status = true));
   };
 
-  console.log(status);
+  const сlickNo = () => {
+    setStatus((status.status = false));
+  };
 
-  console.log("randomQuest status", randomQuest.status);
+  if (randomQuestsion.status === true) {
+    cls.push("green");
+  } else if (randomQuestsion.status === false) {
+    cls.push("red");
+  }
 
   return (
     <div className="questions">
-      <div className="question">
-        {randomQuest.question} {JSON.stringify(randomQuest.status)}
-      </div>
+      <div className={cls.join(" ")}>{randomQuestsion.question}</div>
       <button onClick={сlickYes} className="yes">
         yes
       </button>
-      <button className="no">no</button>
+      <button onClick={сlickNo} className="no">
+        no
+      </button>
     </div>
   );
 }
