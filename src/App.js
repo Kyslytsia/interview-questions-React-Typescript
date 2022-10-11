@@ -1,23 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import "./App.css";
+import randomQuest from "./questions.js";
 
 function App() {
+  const [status, setStatus] = useState(randomQuest.status);
+
+  const сlickYes = () => {
+    randomQuest.status = setStatus(true);
+  };
+
+  console.log(status);
+
+  console.log("randomQuest status", randomQuest.status);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="questions">
+      <div className="question">
+        {randomQuest.question} {JSON.stringify(randomQuest.status)}
+      </div>
+      <button onClick={сlickYes} className="yes">
+        yes
+      </button>
+      <button className="no">no</button>
     </div>
   );
 }
