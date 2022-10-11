@@ -5,7 +5,7 @@ import randomQuestsion from "./questions.js";
 function App() {
   const cls = ["question"];
 
-  const [status, setStatus] = useState(randomQuestsion.setStatus);
+  const [status, setStatus] = useState(randomQuestsion.status);
 
   const сlickYes = () => {
     setStatus(true);
