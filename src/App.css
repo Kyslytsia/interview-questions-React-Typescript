@@ -1,46 +1,30 @@
-.questions {
-  height: 200px;
-  max-width: 700px;
-  border:  1px solid black;
-  border-radius: 20px;
-  margin: 0 auto;
-  padding-top: 20px;
-  position: relative;
+.wrapper {
+    margin: 0 auto;
+    max-width: 700px;
 }
 
-.question {
-  /* border: 1px solid black; */
-  border-radius: 20px;
-  height: 150px;
-  width: 600px;
-  margin: 0 auto;
-  padding: 20px;
-  box-sizing: border-box;
+.list {
+    list-style: none;
 }
 
-.yes, .no {
-  height: 30px;
-  width: 50px;
-  border: 1px solid black;
-  border-radius: 20px;
-  position: absolute;
-  cursor: pointer;
+.list__item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    border: 1px solid black;
+    border-radius: 10px;
+    margin-bottom: 10px;
 }
 
-.yes {
-  right: 50px;
-  bottom: 10px;
+.list__item-block {
+    display: flex;
 }
 
-.no {
-  right: 110px;
-  bottom: 10px;
+.input {
+    margin-right: 5px;
 }
 
-.green {
-  background-color: green;
-}
-
-.red {
-  background-color: red;
+.done {
+    text-decoration: line-through;
 }

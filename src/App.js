@@ -1,35 +1,26 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import "./App.css";
-import randomQuestsion from "./questions.js";
+import List from "./List";
+import questions from "./questions";
 
 function App() {
-  const cls = ["question"];
+  let [question, setQuestion] = useState(questions);
 
-  const [status, setStatus] = useState(randomQuestsion.status);
+  function toggle(index) {
+    setQuestion(
+      question.map((el, i) => {
+        if (i + 1 === index) {
+          el.status = !el.status;
+        }
 
-  const сlickYes = () => {
-    setStatus(true);
-  };
-
-  const сlickNo = () => {
-    setStatus(false);
-  };
-
-  if (status === true) {
-    cls.push("green");
-  } else if (status === false) {
-    cls.push("red");
+        return el;
+      })
+    );
   }
 
   return (
-    <div className="questions">
-      <div className={cls.join(" ")}>{randomQuestsion.question}</div>
-      <button onClick={сlickYes} className="yes">
-        yes
-      </button>
-      <button onClick={сlickNo} className="no">
-        no
-      </button>
+    <div className="wrapper">
+      <List toggle={toggle} />
     </div>
   );
 }
