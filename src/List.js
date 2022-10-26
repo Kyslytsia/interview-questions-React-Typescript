@@ -1,21 +1,27 @@
 import React from "react";
-import questions from "./questions";
+// import questions from "./questions";
 
-function List({ toggle }) {
+function List({ toggle, question }) {
+  // let x = localStorage.getItem("questions");
+  // let question = JSON.parse(x);
+
   return (
     <ul className="list">
-      {questions.map((item, i) => {
-        let classes = ["list__item-block"];
+      {question.map((item, i) => {
+        let classes = ["list__item"];
+        let classes2 = ["list__item-block"];
 
         if (item.status === true) {
-          classes.push("done");
+          classes2.push("done");
+          classes.push("done-2");
         }
 
         return (
-          <li className="list__item" key={i + 1}>
-            <div className={classes.join(" ")}>
+          <li className={classes.join(" ")} key={i + 1}>
+            <div className={classes2.join(" ")}>
               <div>
                 <input
+                  checked={item.status}
                   className="input"
                   type="checkbox"
                   onChange={() => toggle(i + 1)}

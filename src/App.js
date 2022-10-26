@@ -1,10 +1,18 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./App.css";
 import List from "./List";
 import questions from "./questions";
 
 function App() {
-  let [question, setQuestion] = useState(questions);
+  const [question, setQuestion] = useState(
+    localStorage.getItem("questions")
+      ? JSON.parse(localStorage.getItem("questions"))
+      : questions
+  );
+
+  useEffect(() => {
+    localStorage.setItem("questions", JSON.stringify(question));
+  }, [question]);
 
   function toggle(index) {
     setQuestion(
@@ -17,10 +25,10 @@ function App() {
       })
     );
   }
-
+  // console.log("????");
   return (
     <div className="wrapper">
-      <List toggle={toggle} />
+      <List toggle={toggle} question={question} />
     </div>
   );
 }
