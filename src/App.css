@@ -18,8 +18,8 @@
     border-radius: 15px;
     border: 1px solid gainsboro;
     background-color: beige;
-    background-color: beige;
 }
+
 @media (max-width: 849px) {
     .reset-block {
         top: 20px;
