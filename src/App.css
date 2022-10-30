@@ -8,13 +8,13 @@
     top: 0;
     padding: 20px;
     /* border: 1px solid black; */
-    margin-bottom: 10px;
+    height: 30px;
 }
 
 .reset {
     position: absolute;
     right: 10px;
-    top: 10px;
+    top: 20px;
     padding: 5px;
     width: 70px;
 }
