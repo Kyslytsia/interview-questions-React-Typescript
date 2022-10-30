@@ -25,10 +25,20 @@ function App() {
       })
     );
   }
-  // console.log("????");
+
+  function reset() {
+    setQuestion(
+      question.map((el, i) => {
+        el.status = false;
+
+        return el;
+      })
+    );
+  }
+
   return (
     <div className="wrapper">
-      <List toggle={toggle} question={question} />
+      <List toggle={toggle} question={question} reset={reset} />
     </div>
   );
 }

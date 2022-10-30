@@ -1,12 +1,14 @@
 import React from "react";
-// import questions from "./questions";
 
-function List({ toggle, question }) {
-  // let x = localStorage.getItem("questions");
-  // let question = JSON.parse(x);
-
+function List({ toggle, question, reset }) {
   return (
     <ul className="list">
+      <div className="reset-block">
+        <button className="reset" onClick={reset}>
+          сброс
+        </button>
+      </div>
+
       {question.map((item, i) => {
         let classes = ["list__item"];
         let classes2 = ["list__item-block"];
