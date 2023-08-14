@@ -17,7 +17,7 @@ export const GlobalStyle = createGlobalStyle`
 `;
 
 export const Container = styled.div`
-  padding: 20px 10px;
+  padding: 20px;
   height: 1000px;
   background: linear-gradient(90deg, #faf0cd, #fab397);
 `;
