@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Container = styled.body`
+export const Container = styled.div`
   padding: 20px 10px;
   height: 1000px;
   background: linear-gradient(90deg, #faf0cd, #fab397);
