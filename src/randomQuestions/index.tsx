@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import * as Styles from "../styles";
 import { questions } from "../questions";
 import * as IconCheckMark from "../assets/icons/check-mark.svg";
+import * as IconKnowledge from "../assets/icons/knowledge.svg";
 
 const Questions: React.FC = () => {
   const [remainingQuestions, setRemainingQuestions] =
@@ -30,7 +31,13 @@ const Questions: React.FC = () => {
 
   return (
     <Styles.QuestionsContainer>
-      <Styles.Question>{randomQuestion}</Styles.Question>
+      <Styles.Question>
+        {randomQuestion ? (
+          randomQuestion
+        ) : (
+          <IconKnowledge.ReactComponent width={200} height={200} />
+        )}
+      </Styles.Question>
 
       <Styles.ButtonsBlock>
         <Styles.ButtonKnow onClick={handleQuestionClick}>
