@@ -7,6 +7,7 @@ const App: React.FC = () => {
   return (
     <Styles.Container>
       <Questions />
+      <Styles.GlobalStyle />
     </Styles.Container>
   );
 };

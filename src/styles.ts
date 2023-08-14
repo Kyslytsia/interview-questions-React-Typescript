@@ -1,4 +1,20 @@
-import styled from "styled-components";
+import styled, { createGlobalStyle } from "styled-components";
+
+export const GlobalStyle = createGlobalStyle`
+  *,
+  *::before,
+  *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    padding: 0;
+    margin: 0;
+    background: linear-gradient(90deg, #faf0cd, #fab397);
+  }
+`;
 
 export const Container = styled.div`
   padding: 20px 10px;
@@ -46,7 +62,6 @@ export const ButtonKnow = styled.button`
 `;
 
 export const ButtonNext = styled.button`
-  padding: 10px 20px;
   height: 40px;
   width: 160px;
   background-color: transparent;
