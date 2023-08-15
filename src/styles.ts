@@ -23,10 +23,22 @@ export const Container = styled.div`
 `;
 
 export const QuestionsContainer = styled.div`
+  position: relative;
   padding: 20px;
-  margin: 0 auto;
+  margin: 50px auto;
   max-width: 600px;
   background-color: white;
+  border-radius: 20px;
+`;
+
+export const Reset = styled.button`
+  position: absolute;
+  right: 0;
+  top: -45px;
+  height: 30px;
+  width: 100px;
+  background-color: white;
+  border: 2px solid black;
   border-radius: 20px;
 `;
 

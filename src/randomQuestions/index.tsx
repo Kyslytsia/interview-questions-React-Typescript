@@ -36,8 +36,15 @@ const Questions: React.FC = () => {
     }
   };
 
+  const handleResetClick = () => {
+    setRemainingQuestions(questions);
+    setRandomQuestion(null);
+  };
+
   return (
     <Styles.QuestionsContainer>
+      <Styles.Reset onClick={handleResetClick}>RESET</Styles.Reset>
+
       <Styles.Question>
         {randomQuestion ? (
           randomQuestion
