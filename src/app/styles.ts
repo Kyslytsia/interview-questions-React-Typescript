@@ -24,7 +24,7 @@ export const Container = styled.div`
 
 export const QuestionsContainer = styled.div`
   position: relative;
-  padding: 20px;
+  padding: 20px 40px;
   margin: 50px auto;
   max-width: 600px;
   background-color: white;
