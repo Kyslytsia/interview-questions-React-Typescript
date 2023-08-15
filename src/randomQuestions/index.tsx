@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import * as Styles from "../styles";
 import { questions } from "../questions";
@@ -6,9 +6,16 @@ import * as IconCheckMark from "../assets/icons/check-mark.svg";
 import * as IconKnowledge from "../assets/icons/knowledge.svg";
 
 const Questions: React.FC = () => {
-  const [remainingQuestions, setRemainingQuestions] =
-    useState<string[]>(questions);
+  const [remainingQuestions, setRemainingQuestions] = useState<string[]>(
+    localStorage.getItem("questions")
+      ? JSON.parse(localStorage.getItem("questions")!)
+      : questions
+  );
   const [randomQuestion, setRandomQuestion] = useState<string | null>(null);
+
+  useEffect(() => {
+    localStorage.setItem("questions", JSON.stringify(remainingQuestions));
+  }, [remainingQuestions]);
 
   const getRandomQuestion = () => {
     if (remainingQuestions.length > 0) {
