@@ -39,6 +39,10 @@ const Questions: React.FC = () => {
         )}
       </Styles.Question>
 
+      <Styles.RemainingQuestions>
+        {"Remaining Questions: " + remainingQuestions.length}
+      </Styles.RemainingQuestions>
+
       <Styles.ButtonsBlock>
         <Styles.ButtonKnow onClick={handleQuestionClick}>
           <IconCheckMark.ReactComponent width={20} height={20} />

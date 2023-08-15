@@ -42,6 +42,13 @@ export const IconMark = styled.img`
   width: 20px;
 `;
 
+export const RemainingQuestions = styled.div`
+  margin: 0 auto 10px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 700;
+`;
+
 export const ButtonsBlock = styled.div`
   display: flex;
   align-items: center;
