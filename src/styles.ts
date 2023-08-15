@@ -37,6 +37,7 @@ export const Reset = styled.button`
   top: -45px;
   height: 30px;
   width: 100px;
+  color: black;
   background-color: white;
   border: 2px solid black;
   border-radius: 20px;
