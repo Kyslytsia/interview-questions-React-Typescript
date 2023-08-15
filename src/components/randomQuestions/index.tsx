@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from "react";
 
-import * as Styles from "../styles";
-import { questions } from "../questions";
-import * as IconCheckMark from "../assets/icons/check-mark.svg";
-import * as IconKnowledge from "../assets/icons/knowledge.svg";
+import * as Icon from "../icons";
+import * as Styles from "../../app/styles";
+import { questions } from "../../app/questions";
 
 const Questions: React.FC = () => {
   const [remainingQuestions, setRemainingQuestions] = useState<string[]>(
@@ -49,7 +48,7 @@ const Questions: React.FC = () => {
         {randomQuestion ? (
           randomQuestion
         ) : (
-          <IconKnowledge.ReactComponent width={200} height={200} />
+          <Icon.Knowledge width={200} height={200} />
         )}
       </Styles.Question>
 
@@ -59,7 +58,7 @@ const Questions: React.FC = () => {
 
       <Styles.ButtonsBlock>
         <Styles.ButtonKnow onClick={handleQuestionClick}>
-          <IconCheckMark.ReactComponent width={20} height={20} />
+          <Icon.CheckMark width={20} height={20} />
         </Styles.ButtonKnow>
 
         <Styles.ButtonNext onClick={getRandomQuestion}>

@@ -1,7 +1,7 @@
 import React from "react";
 
 import * as Styles from "./styles";
-import Questions from "./randomQuestions";
+import Questions from "../components/randomQuestions";
 
 const App: React.FC = () => {
   return (
