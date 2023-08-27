@@ -44,6 +44,7 @@ const Questions: React.FC = () => {
   };
 
   const handleResetClick = () => {
+    setIsOpenAnswer(false);
     setRandomQuestion(null);
     setRemainingQuestions(questions);
   };
@@ -65,7 +66,7 @@ const Questions: React.FC = () => {
       </Styles.Question>
 
       {randomQuestion && (
-        <Styles.ShowAnswerTitle onClick={handleOpenAnswer}>
+        <Styles.ShowAnswerTitle onClick={handleOpenAnswer} open={isOpenAnswer}>
           {isOpenAnswer ? "Close Answer" : "Show Answer"}
           <Styles.Triangle open={isOpenAnswer} />
         </Styles.ShowAnswerTitle>

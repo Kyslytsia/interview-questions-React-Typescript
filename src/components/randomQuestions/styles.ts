@@ -72,13 +72,15 @@ export const Question = styled.div`
   font-weight: 700;
 `;
 
-export const ShowAnswerTitle = styled.div`
+export const ShowAnswerTitle = styled.div<{ open: boolean }>`
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: ${({ open }) => (open ? "start" : "center")};
   margin: 15px 0;
+  border-bottom: 2px solid grey;
   font-size: 18px;
   font-weight: 700;
+  color: grey;
   transition: all 1s ease;
   cursor: pointer;
 `;
