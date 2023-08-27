@@ -1,6 +1,6 @@
 import React from "react";
 
-import * as Styles from "./styles";
+import * as Styles from "../components/randomQuestions/styles";
 import Questions from "../components/randomQuestions";
 
 const App: React.FC = () => {

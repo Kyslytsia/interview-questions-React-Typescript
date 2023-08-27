@@ -1,4 +1,4 @@
-import styled, { createGlobalStyle } from "styled-components";
+import styled, { createGlobalStyle, css, keyframes } from "styled-components";
 
 export const GlobalStyle = createGlobalStyle`
   *,
@@ -16,6 +16,28 @@ export const GlobalStyle = createGlobalStyle`
   }
 `;
 
+const fadeIn = keyframes`
+  from {
+    opacity: 0;
+    transform: scaleY(0);
+  }
+  to {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+`;
+
+const fadeOut = keyframes`
+  from {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+  to {
+    opacity: 0;
+    transform: scaleY(0);
+  }
+`;
+
 export const Container = styled.div`
   padding: 20px;
   height: 1000px;
@@ -29,6 +51,7 @@ export const QuestionsContainer = styled.div`
   max-width: 600px;
   background-color: white;
   border-radius: 20px;
+  font-family: sans-serif;
 `;
 
 export const Reset = styled.button`
@@ -44,10 +67,61 @@ export const Reset = styled.button`
 `;
 
 export const Question = styled.div`
-  height: 330px;
   text-align: center;
   font-size: 18px;
   font-weight: 700;
+`;
+
+export const ShowAnswerTitle = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 15px 0;
+  font-size: 18px;
+  font-weight: 700;
+  transition: all 1s ease;
+  cursor: pointer;
+`;
+
+export const Triangle = styled.span<{ open: boolean }>`
+  position: relative;
+  left: 4px;
+  margin-left: 20px;
+  height: 10px;
+  width: 2px;
+  background: grey;
+  transition: all 0.4s ease;
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: -4px;
+    top: 4px;
+    height: 2px;
+    width: 10px;
+    background: grey;
+    transition: all 0.4s ease;
+  }
+
+  ${({ open }) => css`
+    transform: ${open && `rotate(270deg)`};
+
+    &::after {
+      opacity: ${open && `0`};
+    }
+  `}
+`;
+
+export const ShowAnswerWrapper = styled.div<{ open: boolean }>`
+  margin-bottom: 25px;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  transform-origin: top;
+
+  ${({ open }) => css`
+    max-height: ${open ? "1000px" : "0"};
+    animation: ${open ? fadeIn : fadeOut} 0.4s ease;
+  `};
 `;
 
 export const IconMark = styled.img`
